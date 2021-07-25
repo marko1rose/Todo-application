@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "tasks")
@@ -19,6 +20,7 @@ public class Task {
 	private Long id;
 
 	private String taskDesc;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date finishDate;
 	@Type(type = "org.hibernate.type.NumericBooleanType")
 	private boolean taskCompleted;
